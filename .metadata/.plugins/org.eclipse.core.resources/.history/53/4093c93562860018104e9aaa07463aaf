@@ -1,0 +1,15 @@
+학습내용
+
+1. DAO [Data Access Object] pattern 학습
+	-sql + jdbc api
+	-DeptDAO.java
+	-각 기능별 메소드 구분해서 세분화
+		-메소드 sql 문장 다 다름 
+		-공통된 로직
+			-driver 로딩
+			-COnnection 생성
+			-자원 반환
+2. table 하나의 row값 들을 자바 객체로 매핑
+	-DeptDTO.java
+	
+3. 

@@ -1,0 +1,106 @@
+/*
+ * 
+ */
+
+package model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import model.domain.DeptDTO;
+import util.DBUtil;
+
+public class DeptDAO {
+	//모든 검색
+	//select * from dept;
+	public static ArrayList<DeptDTO> getAll() throws Exception{
+		Connection con =null;  // 중괄호 부분이 끝나면 휘발되기 때문에 밖에서 선언해준다.
+		Statement stmt =null;
+		ResultSet rs =null;
+		ArrayList<DeptDTO> datas = null;
+		
+		try {
+		//	Connection con =DBUtil.getConnection(); // 위에서 null값으로 초기화 try 문이 안될수도있어서.
+			con =DBUtil.getConnection(); //연결 한다 ! 
+			stmt = con.createStatement(); //sql문장을 실행 가능하게 하는 객체를 만드는 문장
+			rs = stmt.executeQuery("select * from dept"); // 넣어준다 !
+			
+			datas=new ArrayList<DeptDTO>();
+			while(rs.next()) { // 다음꺼 있는지 확인 
+				datas.add(new DeptDTO(rs.getInt(1)
+						,rs.getString(2)
+						,rs.getString(3))); //객체로 컬럼에 하나씩 넣어준다.
+			}
+			
+			
+		} catch (SQLException e) { // 코드가 복잡해지면 관리자가 알기 어렵기 떄문에 중간중간에 넣어준다.
+			e.printStackTrace();
+			throw e; //end쪽에서 도 보게한다. 이렇게 해야 클라이언트도 알수 있다.
+		}finally {
+			DBUtil.close(con,stmt,rs);
+		}
+		return datas;
+	}
+	
+	//deptno로 해당 부서 정보검색
+	//? 
+	public static DeptDTO getDept(int deptno) {
+		return null;
+	}
+	
+	//새로운 부서정보 저장
+// 가능 하지만 넣는 부분이 많아지면 힘들어지니까 밑에 껄로 한다.
+	//insert into dept values(50,'총무부','역삼')
+	/*DeptDTO newDept
+	 * - insert into dept values(newDept.getDeptno(),'총무부','역삼')
+	 * 
+	 */
+//	public static boolean insert(int deptno, String dname,String loc) {
+//		return false;
+//	}
+	public static boolean insert(DeptDTO newDept) {
+		Connection con =null;  // 중괄호 부분이 끝나면 휘발되기 때문에 밖에서 선언해준다.
+		//이 객체가 생성되는 시점엔 이미 고정 된 sql문장이 내장
+		PreparedStatement stmt =null;
+		
+		try {
+		//	Connection con =DBUtil.getConnection(); // 위에서 null값으로 초기화 try 문이 안될수도있어서.
+			con =DBUtil.getConnection(); //연결 한다 ! 
+			stmt = con.prepareStatement("insert into dept values(?,?,?)"); //컬럼수 만큼 ?한다.
+					//sql문장을 실행 가능하게 하는 객체를 만드는 문장
+			rs = stmt.executeQuery("select * from dept"); // 넣어준다 !
+			
+			datas=new ArrayList<DeptDTO>();
+			while(rs.next()) { // 다음꺼 있는지 확인 
+				datas.add(new DeptDTO(rs.getInt(1)
+						,rs.getString(2)
+						,rs.getString(3))); //객체로 컬럼에 하나씩 넣어준다.
+			}
+			
+			
+		} catch (SQLException e) { // 코드가 복잡해지면 관리자가 알기 어렵기 떄문에 중간중간에 넣어준다.
+			e.printStackTrace();
+			throw e; //end쪽에서 도 보게한다. 이렇게 해야 클라이언트도 알수 있다.
+		}finally {
+			DBUtil.close(con,stmt,rs);
+		}
+		return datas;
+	
+	}
+	
+	
+	//deptno 로 loc 수정
+	public static boolean update(int deptno, String newLOC) {
+		return false;
+	}
+	
+	
+	//deptno 로 해당 부서 삭제
+	public static boolean delete(int deptno) {
+		return false;
+	}
+}

@@ -1,0 +1,21 @@
+package view;
+
+import controller.Controller;
+
+public class StartView {
+
+	public static void main(String[] args) {
+		Controller controller = Controller.getInstance();
+		//모든 검색
+		controller.getDeptAll();
+		
+		//insert 
+		controller.insert(new DeptDTO(50,"교육부","역삼동"));
+
+		
+		//모든 검색 
+		
+		//...
+	}
+
+}

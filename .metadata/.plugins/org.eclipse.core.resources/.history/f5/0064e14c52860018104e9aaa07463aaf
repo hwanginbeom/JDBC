@@ -1,0 +1,8 @@
+학습 내용
+
+1. sql + 프로그램 연동 
+2. 사용 언어와 DB종류 
+	Oracle , java [JDBC API]
+3. JDBC API
+	1. Java DataBase Connectivity 표준 API
+	2. db 종류와 무관하게 동일한 코드로 개발 

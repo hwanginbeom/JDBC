@@ -1,0 +1,15 @@
+package view;
+
+public class StartView {
+
+	public static void main(String[] args) {
+		//모든 검색
+		
+		//insert 
+		
+		//모든 검색 
+		
+		//...
+	}
+
+}

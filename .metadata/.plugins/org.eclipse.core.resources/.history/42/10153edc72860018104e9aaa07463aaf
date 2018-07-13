@@ -1,0 +1,19 @@
+package view;
+
+import controller.Controller;
+
+public class StartView {
+
+	public static void main(String[] args) {
+		Controller controller = Controller.
+		//모든 검색
+		
+		
+		//insert 
+		
+		//모든 검색 
+		
+		//...
+	}
+
+}

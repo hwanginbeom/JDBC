@@ -1,0 +1,25 @@
+/* oracle driver를 로딩 
+ * -> Connection() -> 
+ * -> Statement -> sql 문장실행
+ * -> ResultSet or int -> 결과값 활용 -> 자원반환
+ * 
+ * 
+ */
+package step01.basic;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class JDBC1 {
+
+	public static void main(String[] args)  {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver"); // 설치와 같은 개념이다 ! 로딩이다 !  이부분에 있는걸 가져와서 로딩해라 
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:xe","SCOTT","TIGER");
+																							//시스템의 도메인 아이피 (localhost)
+		} catch (Exception e) { //Exception 이건 모든 Exception의 부모라 다 됨
+			e.printStackTrace();
+		}
+	}
+
+}

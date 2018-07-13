@@ -1,0 +1,22 @@
+/*
+ * 
+ */
+
+package model;
+
+public class DeptDAO {
+	//모든 검색
+	
+	
+	//deptno로 해당 부서 정보검색
+	
+	
+	//새로운 부서정보 저장
+	
+	
+	//deptno 로 loc 수정
+	
+	
+	//deptno 로 해당 부서 삭제
+	
+}

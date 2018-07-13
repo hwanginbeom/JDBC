@@ -1,0 +1,13 @@
+학습 내용
+
+1. sql + 프로그램 연동 
+2. 사용 언어와 DB종류 
+	Oracle , java [JDBC API]
+3. JDBC API
+	1. Java DataBase Connectivity 표준 API
+	2. db 종류와 무관하게 동일한 코드로 개발 
+4. 예시
+	Oracle : DB2 : MS Sql : My Sql : Maria : 큐브리드..
+	각 DB와 접속을 위한 메소드 
+		Connection getCOnnection(String uri,)
+	자바 언어로 DB와 접속하고자 할 때는 해당 메소드만 호출 

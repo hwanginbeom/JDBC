@@ -1,0 +1,16 @@
+package util;
+
+import java.sql.DriverManager;
+
+public class DBUtil {
+	static {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} // 설치와 같은 개념이다 ! 로딩이다 ! 이부분에 있는걸 가져와서 로딩해라
+
+	}
+	
+	//DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:xe", "SCOTT", "TIGER");
+}

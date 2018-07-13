@@ -1,0 +1,20 @@
+/* oracle driver를 로딩 -> Connection -> 
+ * -> Statement -> sql 문장실행
+ * -> ResultSet or int -> 결과값 활용 -> 자원반환
+ * 
+ * 
+ */
+package step01.basic; 
+
+public class JDBC1 {
+
+	public static void main(String[] args)  {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver"); // 설치와 같은 개념이다 ! 로딩이다 !  이부분에 있는걸 가져와서 로딩해라 
+			System.out.println("driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+}
