@@ -8,16 +8,25 @@ public class StartView {
 	public static void main(String[] args) {
 		Controller controller = Controller.getInstance();
 		//¸ðµç °Ë»ö
-		controller.getDeptAll();
+//		controller.getDeptAll();
 		
 		//insert 
-		controller.insert(new DeptDTO(50,"±³À°ºÎ","¿ª»ïµ¿"));
-		controller.insert(new DeptDTO(10,"±³À°ºÎ","¿ª»ïµ¿"));
+//		controller.insert(new DeptDTO(60,"±³À°ºÎ","¿ª»ïµ¿"));
 		
 		//¸ðµç °Ë»ö 
+//		controller.getDeptAll();
+		
+		//ÇÏ³ª¸¸ °Ë»ö
+//		controller.getDept(10);
+
+		//delete
+//		controller.delete(60);
+//		controller.getDeptAll();
+
+		//update
+		controller.update( 60,"²¥²¥¿ï");
 		controller.getDeptAll();
 
-		//...
-	}
 
+	}
 }

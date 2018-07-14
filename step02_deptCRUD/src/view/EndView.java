@@ -24,4 +24,9 @@ public class EndView {
 
 	}
 
+	public static void printOne(DeptDTO dept) {
+		System.out.println(dept);
+	}
+	
+
 }
