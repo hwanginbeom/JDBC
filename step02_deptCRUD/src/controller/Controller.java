@@ -20,6 +20,12 @@ public class Controller {
 	private Controller() {
 	}
 
+	// 모든 검색
+	/*
+	 * 발생 가능한 경우의 수 1. 정상 실행 -데이터가 있다 :EndView에게 ArrayList 객체 전송 -데이터가 없다 :
+	 * EndView에서 검색한 데이터 없다. 2.비정상 실행 -예외 발생 : 죄송합니다. 잠시후에 재 요청 바랍니다...메세지
+	 */
+
 	public void getDeptAll() {
 		try {
 			ArrayList<DeptDTO> datas = DeptDAO.getAll(); // 정상
@@ -33,11 +39,6 @@ public class Controller {
 			EndView.errorMsg("죄송합니다 . 잠시후에 재 요청 바랍니다.");
 		}
 	}
-	// 모든 검색
-	/*
-	 * 발생 가능한 경우의 수 1. 정상 실행 -데이터가 있다 :EndView에게 ArrayList 객체 전송 -데이터가 없다 :
-	 * EndView에서 검색한 데이터 없다. 2.비정상 실행 -예외 발생 : 죄송합니다. 잠시후에 재 요청 바랍니다...메세지
-	 */
 
 	// insert
 	/*

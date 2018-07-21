@@ -8,10 +8,10 @@ public class StartView {
 	public static void main(String[] args) {
 		Controller controller = Controller.getInstance();
 		//¸ðµç °Ë»ö
-//		controller.getDeptAll();
+		controller.getDeptAll();
 		
 		//insert 
-//		controller.insert(new DeptDTO(60,"±³À°ºÎ","¿ª»ïµ¿"));
+		controller.insert(new DeptDTO(70,"±³À°ºÎ","¿ª»ïµ¿"));
 		
 		//¸ðµç °Ë»ö 
 //		controller.getDeptAll();
